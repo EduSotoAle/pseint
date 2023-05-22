@@ -1,0 +1,686 @@
+const prompt= require(`prompt-sync`)();
+const escribir = console.log
+
+//logica de una operacion
+class digite_valor{
+     digite_valor(){
+        let a, b, c, resultado;
+
+        a = parseFloat(prompt("Digite el valor de A: "));
+        b = parseFloat(prompt("Digite el valor de B: "));
+        c = parseFloat(prompt("Digite el valor de C: "));
+        
+        resultado = (-b + Math.sqrt(b ** 2 - 4 * a * c)) / (2 * a);
+        
+        console.log("El resultado es: " + resultado);
+    }
+    
+     //solucion logica de una operacion
+     solucion(){
+        let a, b, resultado;
+
+         console.log("Digite el valor de a: ");
+         a = parseFloat(prompt());
+
+         console.log("Digite el valor de b: ");
+         b = parseFloat(prompt());
+
+         resultado = ((3 + 5 * 8) < 3 && ((-6 / 3 * 4) + 2 < 2)) || (a > b);
+
+         console.log("El resultado es: " + resultado);
+    }
+
+     //intercambiar variables
+     variables(){
+        let a, b, aux;
+
+         console.log("Digite el valor de a:");
+         a = parseInt(prompt());
+
+         console.log("Digite el valor de b:");
+         b = parseInt(prompt());
+
+         aux = a;
+         a = b;
+         b = aux;
+
+         console.log("El nuevo valor de a es: " + a);
+         console.log("El nuevo valor de b es: " + b);
+    }
+     // Calcular la cantidad de segundos que están incluidos en el 
+     //número de horas, minutos y segundos ingresados por el usuario.
+     reloj(){
+        let horas, minutos, seg;
+        let horas_seg, minutos_seg, total_seg;
+
+         console.log("Digite las horas:");
+         horas = parseInt(prompt());
+
+         console.log("Digite los minutos:");
+         minutos = parseInt(prompt());
+
+         console.log("Digite los segundos:");
+         seg = parseInt(prompt());
+
+         horas_seg = horas * 3600;
+         minutos_seg = minutos * 60;
+         total_seg = horas_seg + minutos_seg + seg;
+
+         console.log("Los segundos equivalentes son: " + total_seg);
+    }
+     //Hacer un programa para ingresar el radio de un circulo y se  
+     // reporte su área y la longitud de la circunferencia.
+     // area = pi* radio^2
+     // Longitud = 2 * pi * radio
+     radio(){
+        let radio, area, lon;
+        const pi = Math.PI;
+
+         console.log("Digite el valor del radio:");
+         radio = parseFloat(prompt());
+
+         area = pi * Math.pow(radio, 2);
+         lon = 2 * pi * radio;
+
+         console.log("El área de la circunferencia es: " + area);
+         console.log("La longitud es: " + lon);
+    }
+     //Un maestro desea saber que porcentaje de hombres y que 
+     // porcentaje de mujeres hay en un grupo de estudiantes.
+     porcentaje(){
+        let num_hombres, num_mujeres;
+        let total_estudiantes;
+        let porcentajeH, porcentajeM;
+        
+         console.log("Digite el número de hombres:");
+         num_hombres = parseInt(prompt());
+        
+         console.log("Digite el número de mujeres:");
+         num_mujeres = parseInt(prompt());
+        
+         total_estudiantes = num_hombres + num_mujeres;
+         porcentajeH = (num_hombres / total_estudiantes) * 100;
+         porcentajeM = (num_mujeres / total_estudiantes) * 100;
+        
+         console.log("El porcentaje de hombres es: " + porcentajeH + "%");
+         console.log("El porcentaje de mujeres es: " + porcentajeM + "%");
+    }  
+     //Un profesor prepara tres cuestionarios para una evaluación final: 
+     // A, B y C. Se sabe que se tarda 5 minutos en revisar el cuestionario A, 
+     // 8 en revisar el cuestionario B y 6 en el C. La cantidad de exámenes de cada  
+     // tipo se entran por teclado. ¿Cuántas horas y cuántos minutos se tardará en 
+     // revisar todas las evaluaciones?
+     cuestionarios(){
+        let cantidadA, cantidadB, cantidadC;
+        let tiempoA, tiempoB, tiempoC;
+        let tiempo_total;
+        let horas, minutos;
+
+         console.log("Digite la cantidad de cuestionarios A:");
+        cantidadA = parseInt(prompt());
+
+         console.log("Digite la cantidad de cuestionarios B:");
+         cantidadB = parseInt(prompt());
+
+         console.log("Digite la cantidad de cuestionarios C:");
+         cantidadC = parseInt(prompt());
+
+         tiempoA = cantidadA * 5;
+         tiempoB = cantidadB * 8;
+         tiempoC = cantidadC * 6;
+
+         tiempo_total = tiempoA + tiempoB + tiempoC;
+
+         horas = Math.trunc(tiempo_total / 60);
+         minutos = tiempo_total % 60;
+
+         console.log("Se tardará " + horas + " horas y " + minutos + " minutos");
+
+    }      
+
+     // Una tienda ofrece un descuento del 15% sobre el total de la 
+     // compra y un cliente desea saber cuánto deberá pagar finalmente por su compra.
+     descuento(){
+        let precio, descuento, precio_final;
+
+         console.log("Digite el precio a pagar:");
+         precio = parseFloat(prompt());
+        
+         descuento = precio * 0.15;
+         precio_final = precio - descuento;
+        
+         console.log("El precio a pagar es de: " + precio_final);
+        
+    }
+
+     // Un alumno desea saber cuál será su calificación final en la materia de 
+     // Algoritmos. Dicha calificación se compone de los siguientes porcentajes:
+     // 55% del promedio de sus tres calificaciones parciales. 
+     // 30% de la calificación del examen final.
+     // 15% de la calificación de un trabajo final.
+     calficacion_final(){
+        let parcial1, parcial2, parcial3, promedioP, notasParcial;
+        let examen_final, notaExamen;
+        let notaTrabajo, notaFinalTrabajo;
+        let notaFinal;
+
+         console.log("Digite las 3 notas de los parciales:");
+         parcial1 = parseFloat(prompt());
+         parcial2 = parseFloat(prompt());
+         parcial3 = parseFloat(prompt());
+
+         promedioP = (parcial1 + parcial2 + parcial3) / 3;
+         notasParcial = promedioP * 0.55;
+
+         console.log("Digite la nota del examen final:");
+         examen_final = parseFloat(prompt());
+
+         notaExamen = examen_final * 0.3;
+
+         console.log("Digite la nota del trabajo final:");
+         notaTrabajo = parseFloat(prompt());
+
+         notaFinalTrabajo = notaTrabajo * 0.15;
+
+         notaFinal = notasParcial + notaExamen + notaFinalTrabajo;
+
+         console.log("La calificacion final es: " + notaFinal);
+
+     }
+ 
+     //Ingrese un número entero y reportar si es par o impar
+      par_impar(){
+        let num;
+
+         console.log("Digite un numero:");
+         num = parseInt(prompt());
+
+         if (num % 2 === 0) {
+            console.log("El numero " + num + " es par");
+         } else {
+            console.log("El numero " + num + " es impar");
+         }
+
+      }
+
+     //Determinar si un alumno aprueba o reprueba un curso, sabiendo que
+     //aprobará si su promedio de tres calificaciones es mayor o igual a 70
+     //reprueba caso contrario. 
+     aprueba_reprueba(){
+        let nota1, nota2, nota3;
+        let prom;
+
+         console.log("Digite las 3 calificaciones:");
+         nota1 = parseFloat(prompt());
+         nota2 = parseFloat(prompt());
+         nota3 = parseFloat(prompt());
+
+         prom = (nota1 + nota2 + nota3) / 3;
+
+         if (prom >= 70) {
+            console.log("El alumno esta aprobado con: " + prom);
+         } else {
+            console.log("El alumno esta desaprobado con: " + prom);
+         }
+
+     }
+
+     //En un almacén se hace un 20 MOD  de descuento a los clientes 
+     //cuya compra supere los $100. ¿Cuál será la cantidad que pagará una 
+     //persona por su compra? 
+     descuento_clientes(){
+        let compra, precio_final;
+        let descuento;
+
+         console.log("Digite la cantidad a pagar: ");
+         compra = parseFloat(prompt());
+
+         if (compra > 100) {
+            descuento = compra * 0.2;
+         } else {
+            descuento = 0;
+         }
+
+         precio_final = compra - descuento;
+
+         console.log("El precio a pagar es: " + precio_final);
+
+     }
+
+     //Leer 2 numeros ;si son iguales que los multiplique, si el 
+     //primero es mayor que el segundo que los reste y si no que los sume.
+      leer_2(){
+        let num1, num2, resultado;
+
+         console.log("Digite dos numeros: ");
+         num1 = parseFloat(prompt());
+         num2 = parseFloat(prompt());
+
+         if (num1 === num2) {
+     // Si son iguales, multiplicamos
+         resultado = num1 * num2;
+         } else {
+         if (num1 > num2) {
+     // Si el primer numero es mayor, los restamos
+         resultado = num1 - num2;
+         } else {
+         resultado = num1 + num2;
+         }
+         }
+
+         console.log("El resultado es: " + resultado);
+
+      }
+
+     //Leer tres números diferentes e imprimir 
+     //el número mayor de los tres.
+     leer_3(){
+        let num1, num2, num3;
+
+         console.log("Digite tres numeros diferentes: ");
+         num1 = parseFloat(prompt());
+         num2 = parseFloat(prompt());
+         num3 = parseFloat(prompt());
+
+         if (num1 > num2 && num1 > num3) {
+            console.log("El mayor es: " + num1);
+         } else {
+         if (num2 > num1 && num2 > num3) {
+            console.log("El mayor es: " + num2);
+         } else {
+         console.log("El mayor es: " + num3);
+         }
+         }
+
+     }
+
+     //Cuanto pagara una persona que compre manzanas con descuento x kilos
+     descuento_kilos(){
+        let preciok, kilos, precioI;
+        let descuento, precio_final;
+
+         console.log("Cuanto cuesta el kilo de manzanas? ");
+         preciok = parseFloat(prompt());
+         console.log("Cuantos kilos de manzana ha comprado? ");
+         kilos = parseFloat(prompt());
+
+         precioI = preciok * kilos;
+
+         if (kilos >= 0 && kilos <= 2) {
+            descuento = 0;
+         } else if (kilos >= 2.01 && kilos <= 5) {
+            descuento = precioI * 0.1;
+         } else if (kilos >= 5.01 && kilos <= 10) {
+            descuento = precioI * 0.15;
+         } else {
+            descuento = precioI * 0.2;
+         }
+
+         precio_final = precioI - descuento;
+
+         console.log("El precio a pagar es: $" + precio_final);
+
+     }
+
+     //Elaborar un programa que me muestre los días de las semanas 
+     // cuando ingrese Los siete primeros números.
+     dias_semana(){
+        let num = parseInt(prompt("Digite un numero del dia de la semana (1-7):"));
+
+         switch (num) {
+         case 1:
+            console.log("Lunes");
+         break;
+         case 2:
+            console.log("Martes");
+         break;
+         case 3:
+            console.log("Miercoles");
+         break;
+         case 4:
+            console.log("Jueves");
+         break;
+         case 5:
+            console.log("Viernes");
+         break;
+         case 6:
+            console.log("Sabado");
+         break;
+         case 7:
+            console.log("Domingo");
+         break;
+         default:
+            console.log("Error, no existe dia para ese numero");
+         break;
+         }
+
+     }
+
+     //Elaborar un programa que me muestre el 
+     //significado de aniversario de cada década hasta los 60.
+     decadas(){
+        let decada = parseInt(prompt("Digite una decada:"));
+
+         switch (decada) {
+         case 10:
+            console.log("Bodas de Hojalata");
+         break;
+         case 20:
+            console.log("Bodas de Porcelana");
+         break;
+         case 30:
+            console.log("Bodas de Perlas");
+         break;
+         case 40:
+            console.log("Bodas de Rubi");
+         break;
+         case 50:
+            console.log("Bodas de Oro");
+         break;
+         case 60:
+            console.log("Bodas de Diamante");
+         break;
+         default:
+            console.log("Decada no existente");
+         break;
+         }
+
+     }
+
+     //Hacer un programa que tenga un menú con las siguientes opciones:
+     //Opción 1: Elevar un número a una potencia X
+     //Opción 2: Sacar la raíz cuadrada de un número
+     //Opción 3: Salir
+     menu(){
+        function calcularPotencia(base, exponente) {
+            return Math.pow(base, exponente);
+          }
+          
+          function calcularRaizCuadrada(numero) {
+            return Math.sqrt(numero);
+          }
+          
+          let opcion = parseInt(prompt("MENU\n" +
+            "1. Elevar un numero a una potencia X\n" +
+            "2. Sacar la raiz cuadrada de un numero\n" +
+            "3. Salir\n" +
+            "Digite una opcion: "));
+          
+          switch (opcion) {
+            case 1:
+              let num = parseFloat(prompt("Digite un numero: "));
+              let pot = parseFloat(prompt("Digite la potencia: "));
+              let resultado = calcularPotencia(num, pot);
+              console.log("El resultado es: " + resultado);
+              break;
+            case 2:
+              let num2 = parseFloat(prompt("Digite un numero: "));
+              let resultado2 = calcularRaizCuadrada(num2);
+              console.log("El resultado es: " + resultado2);
+              break;
+            case 3:
+              break;
+            default:
+              console.log("Se equivoco de opcion menu");
+              break;
+          }
+          
+     }
+
+     //Calcular la suma de los "N" primeros números
+     suma_N(){
+        let N = parseInt(prompt("Digite la cantidad de numeros a sumarse: "));
+        let suma = 0;
+
+         for (let i = 1; i <= N; i++) {
+         suma += i;
+         }
+
+         console.log("La suma es: " + suma);
+
+     }
+
+     //Se desea calcular independientemente la suma  
+     //de Los números pares e impares comprendidos entre 1 y 50.
+     calcular_par_impar(){
+        let suma_pares = 0;
+        let suma_impares = 0;
+
+         for (let i = 2; i <= 49; i++) {
+         if (i % 2 === 0) {
+            suma_pares += i;
+         } else {
+            suma_impares += i;
+         }
+         }
+
+         console.log("La suma de pares es: " + suma_pares);
+         console.log("La suma de impares es: " + suma_impares);
+
+     }
+
+     //Leer 10 números e imprimir cuantos son positivos, 
+     // cuantos negativos y cuantos neutros.
+    posi_neg_neu(){
+        let positivos = 0;
+        let negativos = 0;
+        let neutros = 0;
+
+         for (let contador = 1; contador <= 10; contador++) {
+         let numero = parseInt(prompt("Digite un número:"));
+
+         if (numero > 0) {
+            positivos++;
+         } else if (numero < 0) {
+            negativos++;
+         } else {
+            neutros++;
+         }
+         }
+
+         console.log("Cantidad de números positivos: " + positivos);
+         console.log("Cantidad de números negativos: " + negativos);
+         console.log("Cantidad de números neutros: " + neutros);
+
+    }
+
+     //Suponga que se tiene un conjunto de calificaciones de un grupo 
+     //de 10 alumnos. Realizar un algoritmo para calcular la calificación promedio y 
+     // a calificación más baja de todo el grupo.
+     conjunto_cali(){
+        let calificacion_promedio, calificacion_baja;
+        let calificacion, suma;
+        let i;
+
+         suma = 0;
+         calificacion_baja = 9999;
+
+         for (i = 1; i <= 10; i++) {
+            calificacion = parseFloat(prompt(i + ". Digite una calificación:"));
+
+            suma += calificacion;
+
+         if (calificacion < calificacion_baja) {
+            calificacion_baja = calificacion;
+         }
+         }
+
+         calificacion_promedio = suma / 10;
+
+         console.log("La calificación promedio es: " + calificacion_promedio);
+         console.log("La calificación más baja es: " + calificacion_baja);
+
+     }
+
+     //Calcular el factorial de un número 
+     //mayor o igual a 0.
+     factorial(){
+        let num;
+        let i, factorial;
+
+         do {
+         num = parseInt(prompt("Digite un número:"));
+         } while (num < 0);
+
+         i = 1;
+         factorial = 1;
+
+         while (i <= num) {
+            factorial *= i;
+            i++;
+         }
+
+         console.log("El factorial es: " + factorial);
+
+     }
+
+     //Calcular la siguiente sumatoria de los "N" elementos: 
+     //S = 1 + 4 + 9 + ...
+     sumatoria(){
+        let n_elementos = parseInt(prompt("Digite la cantidad de elementos a sumarse:"));
+        let i = 1;
+        let suma = 0;
+
+         while (i <= n_elementos) {
+            suma += Math.pow(i, 2);
+            i++;
+         }
+
+         console.log("La suma es: " + suma);
+
+     }
+
+     //Ingresar "N" enteros, visualizar la suma de los números pares 
+     //de la lista, cuántos números pares existen y cuál es el promedio de los numero impares
+     enteros(){
+        let n_elementos = parseInt(prompt("Digite la cantidad de elementos a ingresar:"));
+        let i = 1;
+        let suma_pares = 0;
+        let conteo_pares = 0;
+        let suma_impares = 0;
+        let conteo_impares = 0;
+        let prom_impares = 0;
+
+         while (i <= n_elementos) {
+         let num = parseInt(prompt(i + ". Digite un número:"));
+
+         if (num % 2 === 0) {
+         // El num es par
+         suma_pares += num;
+
+         // Conteo de pares
+         conteo_pares++;
+          } else {
+         // El num es impar
+
+         // Suma iterativa de impares
+         suma_impares += num;
+
+         // Conteo de impares
+         conteo_impares++;
+         }
+
+            i++;
+         }
+
+         if (conteo_pares === 0) {
+            console.log("No se han digitado números pares");
+         } else {
+            console.log("La suma de los números pares es: " + suma_pares);
+            console.log("El conteo de los números pares es: " + conteo_pares);
+         }
+
+         if (conteo_impares === 0) {
+            console.log("No se han digitado números impares");
+         } else {
+            prom_impares = suma_impares / conteo_impares;
+            console.log("El promedio de los números impares es: " + prom_impares);
+         }
+
+     }
+
+     //Sacar las horas trabajadas de 5 perdsonas 
+     //La tarifa de pago 
+     //La sumatoria de todo los salarios
+     horas_trabajadas(){
+        let horasTrabajadas, tarifaPago, salario, sumaSalarios;
+
+         sumaSalarios = 0;
+        
+         for (let i = 1; i <= 5; i++) {
+            horasTrabajadas = parseInt(prompt(`Ingrese las horas trabajadas de la persona ${i}:`));
+            tarifaPago = parseFloat(prompt(`Ingrese la tarifa de pago por hora de la persona ${i}:`));
+        
+            salario = horasTrabajadas * tarifaPago;
+        
+            console.log(`El salario de la persona ${i} es: ${salario}`);
+        
+            sumaSalarios += salario;
+        
+            console.log("");
+         }
+        
+         console.log("La sumatoria de todos los salarios es: " + sumaSalarios);
+        
+     }
+
+
+}
+
+
+
+//se declara la variable de la clase 
+
+ejer1 = new digite_valor()
+ejer2 = new digite_valor()
+ejer3 = new digite_valor()
+ejer4 = new digite_valor()
+ejer5 = new digite_valor()
+ejer6 = new digite_valor()
+ejer7 = new digite_valor()
+ejer8 = new digite_valor()
+ejer9 = new digite_valor()
+ejer10 = new digite_valor()
+ejer11 = new digite_valor()
+ejer12 = new digite_valor()
+ejer13 = new digite_valor()
+ejer14 = new digite_valor()
+ejer15 = new digite_valor()
+ejer16 = new digite_valor()
+ejer17 = new digite_valor()
+ejer18 = new digite_valor()
+ejer19 = new digite_valor()
+ejer20 = new digite_valor()
+ejer21 = new digite_valor()
+ejer22 = new digite_valor()
+ejer23 = new digite_valor()
+ejer24 = new digite_valor()
+ejer25 = new digite_valor()
+ejer26 = new digite_valor()
+//se llama a la funcion que esta dentro de l clase
+//ejer1.digite_valor()
+//ejer2.solucion()
+//ejer3.variables()
+//ejer4.reloj()
+//ejer5.radio()
+//ejer6.porcentaje()
+//ejer7.cuestionarios()
+//ejer8.descuento()
+//ejer9.calficacion_final()
+//ejer10.par_impar()
+//ejer11.aprueba_reprueba()
+//ejer12.descuento_clientes()
+//ejer13.leer_2()
+//ejer14.leer_3()
+//ejer15.descuento_kilos()
+//ejer16.dias_semana()
+//ejer17.decadas()
+//ejer18.menu()
+//ejer19.suma_N()
+//ejer20.calcular_par_impar()
+//ejer21.posi_neg_neu()
+//ejer22.conjunto_cali()
+//ejer23.factorial()
+//ejer24.sumatoria()
+//ejer25.enteros()
+ejer26.horas_trabajadas()
