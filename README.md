@@ -1,0 +1,2 @@
+# pseint
+tareas de algoritmo
